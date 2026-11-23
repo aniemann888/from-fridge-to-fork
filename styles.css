@@ -1,0 +1,544 @@
+
+:root{--purple:#9b60ee;--deep:#633ca9;--light:#e8dbff;--ink:#372956;--muted:#827593;--sky:#d8f9fb;--bg:#fff7f9;--pink:#ffb7d8;--mint:#c5efc5;--yellow:#ffe794}*{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:Manrope,Arial,sans-serif;background:repeating-linear-gradient(90deg,#ffe3f0 0 58px,#ffd4e8 58px 112px)}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid #30bfd5;outline-offset:3px}.app{max-width:1350px;margin:auto;padding:18px 24px 60px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#ffffffeb;border:4px solid #fff;border-radius:24px;padding:13px 20px;box-shadow:0 7px 0 #dba7ce}.logo{display:flex;align-items:center;gap:10px;font:700 27px Fraunces,sans-serif;letter-spacing:.1px}.logo-fridge{width:42px;height:42px;object-fit:contain;display:block}.logo span{color:#8c5add}.top .hint{font-weight:800;font-size:12px;color:#826b9b;background:#f2eaff;border-radius:24px;padding:9px 13px}.hero{text-align:center;margin:31px auto 16px}.eyebrow{font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#a05395;font-size:12px}.hero h1{font:700 clamp(37px,4.5vw,61px) Fraunces,sans-serif;letter-spacing:-1px;margin:6px 0;color:#542d8a;text-shadow:2px 3px 0 #fff}.hero p{font-weight:800;max-width:650px;margin:0 auto;color:#735582;font-size:14px}.game-layout{display:grid;grid-template-columns:minmax(310px,.75fr) minmax(390px,1.25fr);align-items:start;gap:20px}.panel{border:4px solid #fff;border-radius:28px;background:#fffafdeb;box-shadow:0 8px 0 #cdaed2;overflow:hidden}.panel-title{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:20px 20px 10px}.panel-title h2,.recipe-head h2{font:700 26px Fraunces,sans-serif;margin:0;color:#542e87}.tiny{font-size:12px;font-weight:800;color:#9c72be;background:#f0e5ff;border-radius:30px;padding:9px 11px}.explain{padding:0 20px 10px;font-size:13px;font-weight:800;color:#8b7299}.search{margin:8px 19px 10px;display:flex;align-items:center;background:white;border:2px solid #eadcf4;border-radius:16px;padding:10px 13px;gap:7px}.search input{min-width:0;width:100%;border:none;outline:none;background:none;color:var(--ink);font-size:14px}.categories{display:flex;gap:7px;overflow-x:auto;padding:5px 18px 15px;scrollbar-width:thin}.cat{background:#fff;border:2px solid #ebd9f7;border-radius:20px;padding:8px 12px;white-space:nowrap;font-size:12px;font-weight:800;color:#8c71a7}.cat.active{background:#995fea;border-color:#995fea;color:white}.basket-grid{padding:2px 18px 20px;max-height:710px;overflow:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;align-content:start}.food-option{position:relative;min-height:117px;background:linear-gradient(#fff,#f9f2ff);border:2px solid #e9dcfa;border-radius:17px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;transition:transform .15s,box-shadow .15s;touch-action:manipulation}.food-option:hover{transform:translateY(-3px);box-shadow:0 6px 0 #dbc4f3}.food-option.picked{background:#e5fae9;border-color:#78c8a0}.food-option .food-emoji{font-size:36px;filter:drop-shadow(1px 3px 1px #0001);line-height:1.1}.food-option .food-label{font-size:11px;line-height:1.15;font-weight:800;text-align:center}.food-option .check{position:absolute;top:6px;right:6px;background:#a16af2;color:white;border-radius:99px;font-size:12px;width:20px;height:20px;display:grid;place-items:center;font-weight:800}.food-option.picked .check{background:#3fab77}.basket-footer{background:#f4e8ff;border-top:2px dashed #ddc1f6;padding:14px 17px;display:flex;align-items:center;justify-content:space-between;gap:10px}.basket-footer b{font-size:13px;color:#6f4d9e}.reset{border:0;background:white;color:#8357b2;border-radius:12px;padding:9px 12px;font-weight:800;font-size:12px}.fridge-zone{padding:16px 12px 24px;background:radial-gradient(circle at center,#fff9fc,#fce8fa);min-height:785px;position:relative}.kitchen{position:absolute;inset:0;pointer-events:none;overflow:hidden}.kitchen:before,.kitchen:after{content:'';position:absolute;width:52px;height:200px;top:70px;background:repeating-linear-gradient(90deg,#9edd91 0 15px,#b9efae 15px 29px);opacity:.63}.kitchen:before{left:0;border-radius:0 20px 50px 0;transform:rotate(-8deg)}.kitchen:after{right:0;border-radius:20px 0 0 50px;transform:rotate(8deg)}.scoreboard{position:relative;z-index:1;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:11px}.score-pill{background:#fff;border:3px solid #ebd9ff;border-radius:18px;padding:8px 14px;box-shadow:0 4px 0 #e0c9f4;font-size:12px;font-weight:800;color:#6c4d9c}.score-pill strong{color:#7541c5;font-size:18px}.fridge-stage{position:relative;z-index:1;display:flex;justify-content:center;align-items:flex-start;gap:0;margin:12px auto 12px;max-width:580px;padding:0 8px 8px}.fridge{position:relative;width:min(100%,390px);min-width:0;border:12px solid #a16bea;border-top-width:18px;border-bottom-width:21px;border-radius:20px 15px 24px 20px;background:linear-gradient(115deg,#d0f8ff,#c3e9fc 70%,#a6d8f4);box-shadow:inset 0 0 0 6px #7645bf,8px 12px 0 #7343aa,13px 17px 14px #3b16692a;min-height:580px;padding:15px 13px 13px;display:flex;flex-direction:column;gap:8px}.fridge:before{content:'★ FRESH & FUN ★';font:700 10px Fraunces,sans-serif;letter-spacing:1.5px;color:#8a62be;text-align:center}.fridge:after{content:'';position:absolute;bottom:-38px;left:12px;width:80%;height:16px;border-radius:2px 2px 12px 12px;background:#a36ce6;border:4px solid #754abb;box-shadow:0 6px 0 #663e96}.freezer{border-radius:9px;border:4px solid #a1c9e3;background:linear-gradient(#e7fbff,#c8f3ff);padding:8px 6px;min-height:95px;flex-shrink:0}.shelf{position:relative;background:linear-gradient(180deg,#e9ffff75,#b6e9f16e);border-radius:8px 8px 2px 2px;border-bottom:11px solid #9d73dc;min-height:102px;padding:8px 6px 13px;box-shadow:0 6px 0 #6640ac;flex:1}.shelf:after{content:'';position:absolute;bottom:-5px;left:8px;right:8px;height:3px;background:#cba8ff;border-radius:5px}.bin{border-radius:8px;background:#d7d1f8be;border:3px solid #ba9beb;padding:7px 5px;min-height:105px;flex-shrink:0}.zone-name{font-size:10px;letter-spacing:.5px;font-weight:800;text-transform:uppercase;color:#7254a6;margin:0 0 6px}.zone-items{display:flex;flex-wrap:wrap;align-items:flex-end;gap:4px;min-height:48px}.placed{border:1px solid #ffffffa6;background:#ffffffa9;border-radius:10px;padding:3px;min-width:48px;max-width:64px;text-align:center;transition:transform .15s}.placed:hover{transform:scale(1.07)}.placed .emoji{display:block;font-size:26px;line-height:1.15}.placed .name{display:block;font-size:9px;font-weight:800;line-height:1.1}.zone-empty{width:100%;text-align:center;color:#8ca2be;font-weight:800;font-size:11px;padding:12px 0}.drop-target.over{outline:4px dashed #48bfa7;outline-offset:-5px;background:#d5ffe8!important}.fridge-door{align-self:stretch;margin:14px 0 12px 0;width:105px;border:10px solid #9b62e5;border-left:7px solid #7440b6;border-radius:10px 22px 22px 10px;background:linear-gradient(90deg,#ebdafe,#c3a8f3);box-shadow:6px 9px 0 #713ca4,8px 12px 12px #4e288d21;display:flex;flex-direction:column;gap:9px;padding:16px 6px}.door-handle{height:68px;width:9px;background:linear-gradient(90deg,#fff,#ddd2fd);border-radius:7px;align-self:flex-end;border:1px solid #a48ec6}.door-pocket{background:#f9f6ff9c;border-bottom:8px solid #a27bdf;border-radius:8px;padding:7px 4px;min-height:96px;flex:1}.door-pocket .placed{min-width:38px;max-width:53px}.door-pocket .placed .emoji{font-size:21px}.door-pocket .placed .name{font-size:8px}.tray{position:relative;z-index:1;margin:24px auto 0;max-width:550px;border-radius:18px;background:linear-gradient(#bc9aef,#8e63cf);border:7px solid #7851b4;box-shadow:0 8px 0 #603c9d;padding:12px}.tray-title{color:white;font-weight:800;font-size:13px;text-align:center;margin-bottom:10px;letter-spacing:.3px}.tray-items{display:flex;justify-content:center;flex-wrap:wrap;gap:7px;min-height:48px}.tray .placed{background:#fff6fc;border-color:#fff}.tray .zone-empty{color:#f5edff}.recipe-section{margin-top:26px;background:#fffef9;border:4px solid #fff;border-radius:28px;padding:22px 20px;box-shadow:0 9px 0 #d4adce}.recipe-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.recipe-head p{font-size:13px;font-weight:800;color:#87728f;margin:6px 0 12px}.recipe-tools{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:13px 0 20px}.recipe-tools input{flex:1;min-width:150px;border:2px solid #e9def0;border-radius:13px;padding:11px 12px;outline:none}.filter{border:2px solid #ebd6f6;background:#fff;border-radius:15px;padding:9px 11px;color:#7c61a1;font-weight:800;font-size:12px}.filter.active{background:#8c5ce2;border-color:#8c5ce2;color:white}.recipe-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.recipe-card{background:#fff;border:2px solid #efdcf7;border-radius:19px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 4px 0 #f3e6f6}.recipe-image{height:116px;display:flex;align-items:center;justify-content:center;position:relative}.recipe-image span{font-size:54px;filter:drop-shadow(1px 5px 1px #0002)}.heart{position:absolute;right:8px;top:8px;border:0;border-radius:50%;width:31px;height:31px;background:#fff;font-size:19px;color:#bb9fba}.heart.saved{color:#ff5b83}.recipe-info{padding:12px;flex:1;display:flex;flex-direction:column}.recipe-info small{font-size:10px;color:#a484ac;font-weight:800;text-transform:uppercase}.recipe-info h3{font:600 18px Fraunces,sans-serif;margin:5px 0 7px}.recipe-info p{font-size:12px;font-weight:700;color:#887b8c;line-height:1.4;flex:1;margin:0 0 10px}.meter{height:8px;border-radius:9px;background:#f1e8f4;overflow:hidden;margin-bottom:6px}.meter i{display:block;height:100%;background:#69d4a7;border-radius:9px}.match{font-size:11px;font-weight:800;color:#9970b2;margin-bottom:9px}.match.ready{color:#25976a}.view{width:100%;border:0;border-radius:12px;background:#9b66eb;color:#fff;font-weight:800;padding:10px}.view:hover{background:#7c4ecb}.no-result{grid-column:1/-1;padding:36px;text-align:center;color:#7b618c;font-weight:800}.modal-back{position:fixed;inset:0;background:#28153eab;z-index:20;display:none;justify-content:center;align-items:center;padding:16px}.modal-back.open{display:flex}.modal{background:#fffafb;width:min(560px,100%);max-height:92vh;overflow:auto;border:5px solid #e3cbff;border-radius:26px;padding:23px;box-shadow:0 15px 0 #6b44ac}.modal-top{display:flex;justify-content:space-between;gap:15px}.modal h2{font:700 29px Fraunces;margin:0 0 5px}.modal p{margin:0;color:#887a91;font-weight:800;font-size:13px}.close{border:0;border-radius:50%;background:#eee1ff;color:#7549ac;font-size:22px;width:38px;height:38px}.modal-art{border-radius:18px;padding:12px;background:#f5eafa;text-align:center;font-size:67px;margin:16px 0}.modal h3{font:600 19px Fraunces;margin:17px 0 9px}.tags{display:flex;flex-wrap:wrap;gap:7px}.ingredient-tag{font-size:12px;font-weight:800;border-radius:12px;background:#e1f8e7;color:#3c8663;padding:7px 10px}.ingredient-tag.missing{background:#fff0df;color:#bd7d46}.modal ol{padding-left:22px;color:#6c5b77;font-weight:700;line-height:1.7;font-size:14px}.foot{text-align:center;font-weight:800;color:#8f6691;font-size:12px;margin:26px 0}.help{font-size:11px;font-weight:800;color:#a183b3;margin:8px 0 0;text-align:center}@media(max-width:1060px){.game-layout{grid-template-columns:1fr}.basket-grid{grid-template-columns:repeat(5,minmax(0,1fr));max-height:350px}.fridge-zone{min-height:unset}.recipe-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:700px){.app{padding:12px 11px 40px}.logo{font-size:21px}.top .hint{display:none}.hero{margin:24px 0}.basket-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.recipe-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.fridge{min-height:520px;padding:12px 7px;gap:7px}.fridge-door{width:85px;padding:13px 3px;border-width:7px}.placed{min-width:37px;max-width:49px}.placed .emoji{font-size:21px}.placed .name{font-size:8px}.zone-name{font-size:9px}.panel-title{padding:15px 15px 8px}.recipe-section{padding:17px 11px}.recipe-info h3{font-size:16px}}@media(max-width:390px){.fridge-door{width:67px}.door-pocket .placed{min-width:29px;max-width:39px}.door-pocket .placed .emoji{font-size:18px}.recipe-grid{gap:8px}.recipe-info{padding:9px}}
+
+/* Original side-by-side workspace layout, with expanded game content */
+.game-layout{grid-template-columns:minmax(390px,1fr) minmax(440px,1fr);gap:22px;align-items:stretch}
+.game-layout>.panel{min-width:0}
+.game-layout>.panel:first-child{display:flex;flex-direction:column}
+.basket-grid{grid-template-columns:repeat(4,minmax(0,1fr));max-height:715px;min-height:480px;align-content:start}
+.food-option{min-height:105px}
+.basket-footer{margin-top:auto}
+.fridge-heading{text-align:center;position:relative;z-index:2;padding:2px 0 5px}
+.fridge-heading h2{font:700 27px Fraunces,sans-serif;color:#542e87;margin:0 0 2px}
+.fridge-heading p{font-size:12px;color:#866c9a;font-weight:800;margin:0 0 9px}
+.fridge-zone{min-height:unset;padding-bottom:22px}
+.fridge-stage{max-width:590px}
+.fridge{width:min(100%,390px)}
+.recipe-section{margin-top:26px}
+@media (max-width:1000px) and (min-width:760px){
+ .app{padding-left:13px;padding-right:13px}
+ .game-layout{grid-template-columns:minmax(330px,1fr) minmax(370px,1fr);gap:12px}
+ .basket-grid{grid-template-columns:repeat(3,minmax(0,1fr));max-height:750px;padding-left:12px;padding-right:12px}
+ .food-option{min-height:103px}
+ .fridge-stage{padding:0 2px}
+ .fridge{min-height:540px;padding:10px 7px;gap:6px;border-width:9px}
+ .fridge-door{width:74px;border-width:7px;padding:10px 3px}
+ .placed{min-width:37px;max-width:49px}
+ .placed .emoji{font-size:21px}
+ .placed .name{font-size:8px}
+ .recipe-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:759px){
+ .game-layout{grid-template-columns:1fr}
+ .basket-grid{grid-template-columns:repeat(3,minmax(0,1fr));max-height:420px;min-height:unset}
+ .recipe-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:430px){.fridge-stage{padding:0}.fridge-door{width:70px}}
+.ingredient-cart-icon{width:39px;height:39px;object-fit:contain;vertical-align:middle;margin-right:5px}
+
+/* Minimal hand-drawn kitchen redesign */
+:root{--ink:#252823;--muted:#71746b;--accent:#9caa89;--line:#282a25;--paper:#fffefa;--shade:#f5f5ee}
+body{background:#f7f7f1;color:var(--ink);font-family:'Manrope',Arial,sans-serif}
+.app{max-width:1370px;padding:24px 28px 70px}
+.top{border:1.7px solid #32372e;border-radius:18px;background:#fffefa;box-shadow:none;padding:12px 22px}
+.logo{display:flex;align-items:center;gap:11px;font:600 27px 'Fraunces',sans-serif;color:#292b26}
+.logo span{color:#292b26}
+.logo-fridge{width:40px;height:42px;object-fit:contain;mix-blend-mode:multiply}
+.top .hint{background:#eff1e8;color:#52634e;border:1px solid #d7decf;font-size:12px;font-weight:800;letter-spacing:.1px}
+.hero{padding:17px 0 12px;margin:18px auto 12px}
+.eyebrow{font-size:11px;color:#788772;letter-spacing:2.5px}
+.hero h1{font:600 clamp(34px,4vw,56px) 'Fraunces',sans-serif;color:#292b26;letter-spacing:-1.6px;text-shadow:none;margin:8px 0 10px}
+.hero p{color:#727970;font-size:14px;font-weight:700;max-width:680px;line-height:1.6}
+.game-layout{grid-template-columns:minmax(360px,1fr) minmax(435px,1fr);gap:22px;align-items:stretch}
+.panel,.recipe-section{border:1.8px solid #31362f;background:#fffefa;border-radius:20px;box-shadow:4px 5px 0 #dde2d5}
+.panel-title{padding:22px 22px 11px}
+.panel-title h2,.recipe-head h2,.fridge-heading h2{font:600 27px 'Fraunces',sans-serif;color:#2b3028}
+.ingredient-cart-icon{width:40px;height:38px;object-fit:contain;mix-blend-mode:multiply;margin-right:8px;vertical-align:middle}
+.tiny{background:#edf1e6;border:1px solid #d9dfd1;color:#5c6955;padding:8px 12px;font-size:11px;font-weight:800}
+.explain{color:#74796e;padding:0 22px 12px;line-height:1.55;font-weight:700;font-size:13px}
+.search{background:#fdfdf9;border:1.6px solid #ccd3c8;margin:8px 20px 13px;border-radius:11px}
+.search input{color:#30382f}
+.categories{padding:4px 20px 17px;gap:8px}
+.cat{border:1.3px solid #d5d9d0;background:#fffefa;border-radius:9px;color:#586257;padding:9px 12px;font-size:11px}
+.cat.active{background:#39483b;color:#fff;border-color:#39483b}
+.basket-grid{padding:0 19px 19px;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;max-height:710px}
+.food-option{border:1.5px solid #d2d7cc;background:#fff;box-shadow:none;border-radius:13px;min-height:112px;padding:9px 3px 10px;gap:4px}
+.food-option:hover{transform:translateY(-2px);box-shadow:2px 3px 0 #c5cec0}
+.food-option.picked{background:#eef4e8;border-color:#85977e}
+.food-option .food-emoji{font-size:26px;display:grid;place-items:center;height:43px;line-height:1}
+.food-option .food-label{font-size:10px;color:#414840;letter-spacing:.1px}
+.food-option .check{background:#f4f6ef;border:1px solid #c8d3c3;color:#455a46;width:19px;height:19px;right:6px;top:6px}
+.food-option.picked .check{background:#829978;color:#fff;border-color:#829978}
+.doodle{display:inline-block;width:48px;height:46px;color:#30332d;vertical-align:middle;flex:none}
+.food-option .doodle{width:48px;height:45px}
+.placed .doodle{width:34px;height:30px}
+.recipe-image .doodle{width:132px;height:99px}
+.modal-art .doodle{width:170px;height:145px}
+.basket-footer{border-top:1px solid #e0e5d9;background:#f1f3ec;padding:14px 20px}
+.basket-footer b{color:#465746}
+.reset{background:#fffefa;border:1.4px solid #bbc9b5;color:#374b3a;border-radius:9px}
+.fridge-zone{background:#fdfcf8;padding:17px 12px 27px;min-height:760px}
+.kitchen{display:none}
+.fridge-heading h2{margin:4px 0 4px}
+.fridge-heading p{color:#7b8076;font-size:12px}
+.score-pill{background:#fffefa;border:1.5px solid #cbd4c6;border-radius:11px;box-shadow:none;color:#555e53;font-size:11px}
+.score-pill strong{color:#49654b}
+.fridge-stage{max-width:610px;gap:0}
+.fridge{border:4px solid #313a31;border-top-width:6px;border-bottom-width:10px;background:linear-gradient(120deg,#f1f4ed,#fbfdfa 55%,#e6ebe1);border-radius:23px 14px 26px 22px;box-shadow:inset 0 0 0 2px #c2cbbd,6px 7px 0 #a9b6a2,9px 12px 14px #1d2a1c12;min-height:572px;gap:9px;padding:17px 14px 15px}
+.fridge:before{content:'— my little fridge —';font:600 13px 'Fraunces',sans-serif;letter-spacing:.2px;color:#6a7d65}
+.fridge:after{background:#7a8773;border:2px solid #323a31;box-shadow:none}
+.freezer{border:1.5px solid #afc1b6;background:#eff5f2;border-radius:8px;min-height:92px}
+.shelf{background:#fafcf9;border:1px solid #d7e0d4;border-bottom:7px solid #8f9f91;border-radius:7px 7px 3px 3px;box-shadow:0 2px 0 #49584a;min-height:101px}
+.shelf:after{background:#dde6db}
+.bin{background:#edf2e8;border:1.5px solid #a9baaa;border-bottom:5px solid #98a998;border-radius:9px}
+.zone-name{color:#687a67;font-size:10px;letter-spacing:.6px}
+.zone-empty{color:#a2aca1}
+.placed{background:#fffefa;border:1.2px solid #c6d0c2;border-radius:8px;min-width:47px;max-width:66px;box-shadow:none;padding:4px}
+.placed .emoji{height:30px;display:grid;place-items:center}
+.placed .name{color:#4e574d;font-size:9px}
+.drop-target.over{outline:2px dashed #89a487;background:#edf5e8!important}
+.fridge-door{border:4px solid #343b33;border-left:3px solid #8b9c8d;border-radius:6px 22px 22px 7px;background:linear-gradient(90deg,#f8faf4,#e3e9de);box-shadow:4px 7px 0 #aebbac,6px 8px 9px #1e281c13;padding:15px 6px;width:106px}
+.door-pocket{background:#fdfef9;border-bottom:5px solid #97a897;border-radius:7px;min-height:87px}
+.door-handle{background:#d4dbcf;border:1px solid #687568}
+.tray{background:#edf1e7;border:1.8px solid #4f5c4e;border-radius:12px;box-shadow:3px 4px 0 #d4dccb;margin-top:21px}
+.tray-title{color:#566655;font-size:12px;letter-spacing:1px}
+.tray .zone-empty{color:#7f8d7f}
+.tray .placed{background:#fffefa;border-color:#c8d0c2}
+.help{color:#788479;font-size:12px}
+.recipe-section{margin-top:25px;padding:25px 21px}
+.recipe-head h2{color:#2b3028}
+.recipe-head p{color:#788076;font-size:13px;line-height:1.5}
+.recipe-tools input{background:#fff;border:1.5px solid #ced5cb;border-radius:10px}
+.filter{background:#fffefa;border:1.4px solid #d0d8ce;border-radius:10px;color:#687767}
+.filter.active{background:#3d4c3d;border-color:#3d4c3d;color:white}
+.recipe-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.recipe-card{background:#fff;border:1.5px solid #d5dcd3;border-radius:14px;box-shadow:none}
+.recipe-image{height:140px;background:#f4f4ee!important;border-bottom:1px solid #e5e8df}
+.recipe-image span{filter:none;font-size:0;display:grid;place-items:center}
+.recipe-info{padding:14px}
+.recipe-info small{color:#82907d;font-size:10px}
+.recipe-info h3{font:600 19px 'Fraunces',sans-serif;color:#2d372d}
+.recipe-info p{color:#7a8179;font-size:12px}
+.heart{border:1px solid #d7dbd2;color:#8b928a;background:#fffefa}
+.heart.saved{color:#9c755e}
+.meter{background:#e9ede5}.meter i{background:#91aa89}
+.match{color:#7a8777}.match.ready{color:#547d59}
+.view{background:#3d503f;color:#fff;border-radius:9px}.view:hover{background:#5b765a}
+.modal-back{background:#1a211ab0}
+.modal{background:#fffefa;border:1.7px solid #455145;box-shadow:8px 10px 0 #abb9a4;border-radius:17px}
+.modal h2{color:#30392e}.modal-art{background:#f2f3ed!important;border-radius:12px}
+.ingredient-tag{background:#e7efe4;color:#435e46}.ingredient-tag.missing{background:#f1eae0;color:#826d58}
+.close{background:#edf2e9;color:#3c4e3e}
+.foot{color:#8a9187}
+@media(max-width:1050px){.recipe-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:930px){.game-layout{grid-template-columns:1fr}.basket-grid{max-height:460px}.fridge-zone{min-height:unset}}
+@media(max-width:600px){.app{padding:14px 12px 42px}.top{padding:12px;gap:7px}.logo{font-size:21px}.top .hint{font-size:10px}.basket-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.recipe-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.panel-title h2{font-size:23px}.fridge{padding:12px 7px}.fridge-door{width:73px;padding:8px 3px}.placed{min-width:39px;max-width:50px}.placed .doodle{width:27px;height:26px}}
+
+
+/* Vintage red refrigerator — original hand-drawn inspired restyling */
+.fridge-stage{padding:22px 15px 40px;gap:0;align-items:stretch;overflow:visible}
+.fridge{
+  width:min(100%,390px);min-height:598px;
+  border:13px solid #b91316;
+  border-top:27px solid #d82321;
+  border-bottom:25px solid #a91114;
+  border-left-width:18px;
+  border-right-width:12px;
+  border-radius:80px 26px 22px 34px / 55px 28px 24px 32px;
+  background:linear-gradient(112deg,#fffdf0 5%,#fff9e2 66%,#eee5c8 100%);
+  box-shadow:inset 0 0 0 3px #2b2721, inset 7px 0 0 #eee3c6,
+             -11px 3px 0 #8c0d11, -14px 6px 0 #302a27,
+             6px 10px 0 #3e2925,12px 15px 18px #3b221c29;
+  padding:19px 12px 15px;gap:9px;isolation:isolate;
+}
+.fridge:before{
+  content:'F R E S H  •  F O O D';
+  font:700 10px 'Manrope',sans-serif;letter-spacing:1.7px;
+  color:#b32723;text-align:center;text-shadow:none;
+}
+.fridge:after{
+  content:'';position:absolute;left:5px;right:auto;bottom:-37px;
+  width:58px;height:12px;border-radius:1px 1px 6px 6px;
+  background:#39302d;border:2px solid #201a18;box-shadow:275px 0 0 #39302d;
+}
+.freezer{
+  background:#f5f9f3;border:2px solid #30332d;border-radius:8px;
+  box-shadow:inset 0 0 0 3px #d6e6e3;
+}
+.shelf{
+  background:linear-gradient(180deg,#fffdf0,#f8f6e8);
+  border:1.5px solid #b8b8a5;
+  border-bottom:8px solid #bab8a5;
+  box-shadow:0 3px 0 #34302a;
+}
+.shelf:after{background:#fdfdf5}
+.bin{
+  background:linear-gradient(180deg,#f7f2d9,#eae5c9);
+  border:2px solid #4c4a3d;border-bottom:7px solid #c6c1a9;
+}
+.zone-name{color:#625b48}
+.zone-empty{color:#afa993}
+.fridge-door{
+  width:116px;margin:20px 0 13px -1px;
+  border:6px solid #332823;border-left:8px solid #a91816;
+  border-radius:16px 42px 37px 8px / 15px 40px 40px 10px;
+  background:linear-gradient(105deg,#e5221d 0%,#d51a1b 70%,#a60b10 100%);
+  box-shadow:inset 0 0 0 4px #f0443a,5px 9px 0 #911113,8px 13px 15px #3a201b30;
+  padding:22px 6px 12px;
+}
+.door-pocket{
+  background:linear-gradient(#fffdf2,#f3ecd2);
+  border:2px solid #3c3430;border-bottom:8px solid #d7d0b7;
+  border-radius:8px 8px 12px 12px;
+  box-shadow:inset 0 3px 0 #fff;
+}
+.door-handle{
+  width:10px;height:80px;align-self:flex-end;margin-right:5px;
+  background:linear-gradient(90deg,#ece6cc,#fffef0 55%,#a7a29a);
+  border:2px solid #342f29;border-radius:9px;
+}
+.fridge-zone{background:#fffefa}
+.fridge-heading h2{color:#9e1517}
+.score-pill strong{color:#a61a1a}
+.drop-target.over{outline:2px dashed #b95543;background:#fff0e5!important}
+@media(max-width:600px){
+  .fridge-stage{padding:14px 5px 38px}
+  .fridge{border-left-width:11px;border-right-width:8px;padding:14px 6px}
+  .fridge-door{width:80px;padding:13px 3px;margin-left:-2px}
+  .fridge:after{box-shadow:185px 0 0 #39302d}
+}
+
+
+/* Bold, clean outlined food illustrations with a small, bright color palette. */
+.food-illustration{display:block;width:100%;height:100%;max-height:100%;overflow:visible}
+.food-option .food-emoji{display:flex;align-items:center;justify-content:center;width:62px;height:62px;font-size:unset;filter:none;line-height:normal;margin:auto}
+.food-option{min-height:122px;background:#fff;border-color:#e1dfd9}
+.food-option.picked{background:#f1f7ed;border-color:#7b9f75}
+.food-option .food-label{font-size:11px}
+.placed .emoji{display:flex;align-items:center;justify-content:center;width:39px;height:39px;font-size:unset;line-height:normal;margin:auto}
+.doodle{width:100%;height:100%}
+.recipe-image>span{width:82px;height:82px;display:flex;align-items:center;justify-content:center;font-size:unset;filter:none}
+.modal-art .food-illustration{height:130px;width:130px;margin:auto}
+.recipe-image{background:#fbfaf6!important}
+@media(max-width:540px){.food-option .food-emoji{width:52px;height:52px}.food-option{min-height:110px}}
+
+
+/* Restored side-by-side layout with a retro red main refrigerator and illustrated recipe dishes. */
+.fridge{border:4px solid #2f2320;border-top-width:9px;border-bottom-width:12px;background:linear-gradient(130deg,#c91515 0%,#f53a3a 48%,#d41818 100%);border-radius:38px 22px 30px 34px;box-shadow:inset 0 0 0 2px #ff9090,8px 10px 0 #8f1414,12px 14px 14px rgba(0,0,0,.12);min-height:590px;padding:18px 14px 16px;gap:10px}
+.fridge:before{content:'— retro fridge —';font:600 13px 'Fraunces',sans-serif;letter-spacing:.25px;color:#fff1d8}
+.fridge:after{background:#b51111;border:2px solid #2f2320;box-shadow:none;height:14px}
+.freezer{border:2px solid #b9d0de;background:#eef6fb;border-radius:10px}
+.shelf{background:#fffef7;border:2px solid #d8d2bf;border-bottom:7px solid #bfa46d;border-radius:10px 10px 3px 3px;box-shadow:0 3px 0 #6f5a37;min-height:102px}
+.shelf:after{background:#ece4c8}
+.bin{background:#f7f1de;border:2px solid #d2c49d;border-bottom:7px solid #b39863;border-radius:11px}
+.zone-name{color:#6f5630}
+.zone-empty{color:#b79e73}
+.drop-target.over{outline:3px dashed #b93a30;background:#fff6dc!important}
+.placed{background:#fffdf7;border:1.3px solid #c9c1b0;border-radius:9px}
+.placed .name{color:#584b3f}
+.fridge-door{border:4px solid #2f2320;border-left:3px solid #931212;border-radius:10px 26px 26px 10px;background:linear-gradient(90deg,#f74b4b,#d61717);box-shadow:5px 8px 0 #901313,7px 10px 12px rgba(0,0,0,.11);width:112px;padding:16px 6px}
+.door-pocket{background:#fffef8;border:1.6px solid #d7ccb0;border-bottom:6px solid #c2a876;border-radius:8px;min-height:90px}
+.door-handle{background:#f5de94;border:1px solid #6c5632}
+.tray{background:#fff7e7;border:2px solid #594739;border-radius:14px;box-shadow:4px 5px 0 #d5c3a4}
+.tray-title{color:#7f2018}
+.recipe-illustration{display:block;width:118px;height:92px;overflow:visible}
+.recipe-image>span{width:128px;height:98px}
+.modal-art .recipe-illustration{width:240px;height:170px;margin:auto}
+.modal-art{min-height:176px;display:flex;align-items:center;justify-content:center}
+.recipe-image{background:#f6f4ed!important}
+
+
+/* 2026 refinement: quiet cookbook UI; the illustrated fridge keeps its retro contours. */
+:root{--ink:#292b26;--muted:#60685c;--paper:#fffefa;--red:#b72c25}
+html{scroll-behavior:smooth;scroll-padding-top:20px}body{font-family:"Manrope",sans-serif;background:#f6f5ee;line-height:1.45}
+button,input,select{font:inherit}button,a,input,select{-webkit-tap-highlight-color:transparent}button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #b72c25;outline-offset:3px}
+.top,.panel,.recipe-section,.food-option,.search,.cat,.filter,.reset,.view,.tiny,.recipe-card,.recipe-tools input,.recipe-tools select,.modal,.modal-art,.ingredient-tag,.tray,.score-pill{border-radius:0;box-shadow:none}
+.app{max-width:1330px;padding-top:24px}.top{border-width:0 0 1px;padding:0 0 18px;background:transparent}.logo{font-family:Fraunces,serif;font-weight:700;font-size:26px;letter-spacing:-1px}.header-nav{display:flex;gap:28px;font-size:12px;font-weight:700}.header-nav a{color:#41483c;text-decoration:none}.header-nav a:last-child{color:var(--red)}
+.hero{margin:28px auto 30px;padding:10px 0}.eyebrow{color:#66775b;font-size:10px;letter-spacing:3px}.hero h1{font:normal clamp(38px,4.9vw,65px)/1.13 Fraunces,serif;letter-spacing:-2px;margin:14px 0}.hero p{font-weight:400;color:#5f6859;max-width:610px}
+.panel,.recipe-section{border:1px solid #394133}.game-layout{gap:22px;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.panel-title h2,.fridge-heading h2,.recipe-head h2{font-family:Fraunces,serif;font-weight:normal;font-size:27px}.recipe-head h2{font-size:34px;line-height:1.16;letter-spacing:-.8px}.tiny{font-size:11px;color:#43583d}.panel-title{padding-top:20px}.explain{font-weight:400;color:#60685c}.search{border-color:#b1b7aa;padding:11px 12px}.search>span{font-size:24px;line-height:1}.categories{flex-wrap:wrap;overflow:visible;gap:6px;padding-bottom:10px}.cat{font-size:11px;padding:8px 10px;min-height:36px}.ingredient-controls{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:0 20px 13px;font-size:11px;color:#5f6859}.ingredient-controls label{display:flex;align-items:center;gap:5px}.ingredient-controls input{accent-color:#3d503f}
+.basket-grid{height:568px;min-height:0;max-height:568px;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;scrollbar-color:#adb7a1 #f4f4ed}.food-option{min-height:108px;border-color:#c9cec1;transition:background .15s}.food-option:hover{box-shadow:none;transform:none;background:#f5f7ef}.food-option.picked{border:2px solid #536d49;background:#edf2e4}.food-option .food-label{font-size:11px;font-weight:600}.food-option .check{border-radius:50%}.food-option .food-emoji{width:56px;height:56px}.basket-footer{padding:15px 20px;font-size:12px}.reset{min-height:40px}.basket-footer b{font-size:12px}.fridge-zone{padding:21px 13px 18px;min-height:0}.fridge-heading h2{color:#a72821}.fridge-heading p{font-weight:400;color:#626959}.scoreboard{margin:15px 0 0}.score-pill{padding:6px 13px;font-size:10px}.score-pill strong{font-size:17px}
+.fridge-stage{max-width:490px;padding:20px 12px 28px}.fridge{flex:1;min-height:546px;padding:17px 11px 14px;gap:9px;background:#d73129;box-shadow:inset 0 0 0 2px #f66a59,5px 6px 0 #8b211e;border-radius:38px 20px 23px 28px}.fridge:before{font:600 10px Manrope,sans-serif;text-transform:uppercase;letter-spacing:2px;content:'THE LITTLE KITCHEN'}.fridge:after{width:42px;bottom:-24px;height:10px;background:#39302d}.fridge-door{flex:0 0 97px;width:97px;background:#d73129;box-shadow:4px 6px 0 #8b211e;padding:16px 5px}.door-handle{background:#f2ead4;height:62px}.freezer,.shelf,.bin{border-color:#7d725c;min-height:86px}.freezer{background:#f0f4ed}.shelf{background:#fffbed;border-bottom-color:#b0aa94;box-shadow:0 2px 0 #594a37}.door-pocket{background:#fffbed;border-bottom-color:#b0aa94}.zone-name{font-size:9px;font-weight:600;letter-spacing:.7px}.zone-items{gap:4px}.placed{border-radius:3px;min-width:39px;max-width:57px;padding:3px}.placed .emoji{width:30px;height:30px}.placed .name{font-size:8px}.door-pocket .placed{min-width:32px;max-width:54px}.door-pocket .placed .emoji{width:26px;height:26px}.help{font-weight:400;font-size:11px;margin:6px 0 14px;color:#626959}.tray{background:#f5f4e9;border:1px solid #c6cab9;padding:12px;margin-top:13px}.tray-title{color:#657057;font-weight:600;font-size:9px;letter-spacing:2px}.tray-items{max-height:150px;overflow:auto}.shelf-controls{display:flex;align-items:end;justify-content:center;gap:7px;margin:0 auto;max-width:450px}.shelf-controls label{display:flex;flex-direction:column;gap:4px;min-width:0;flex:1;font-size:10px;color:#5f6859}.shelf-controls select{min-width:0;width:100%;height:38px;border:1px solid #b7bdac;background:#fffefa;padding:6px;color:#394133}.shelf-controls button{height:38px;min-height:38px;padding:6px 10px}.shelf-controls button:disabled{opacity:.4;cursor:default}
+.recipe-section{margin-top:30px;padding:28px 22px}.recipe-head{align-items:center}.recipe-head p{font-weight:400;max-width:660px;font-size:12px;color:#60685c}.recipe-tools{gap:7px;margin:22px 0 12px}.recipe-tools input{flex-basis:240px;font-size:12px;min-height:42px}.recipe-tools select{padding:9px;background:#fffefa;color:#465540;border:1px solid #b6bfae;font-size:12px;min-height:42px}.filter{font-size:11px;padding:10px;min-height:42px}.recipe-summary{color:#5a6754;font-size:11px;margin:0 0 16px}.recipe-grid{gap:16px}.recipe-card{border-color:#bcc4b4}.recipe-image{height:155px;background:#f6f4eb!important}.recipe-image>span{width:165px;height:116px}.recipe-illustration{width:165px;height:116px}.recipe-info{padding:15px}.recipe-info h3{font:normal 21px/1.15 Fraunces,serif;min-height:48px;margin:9px 0}.recipe-info small{color:#5f7055;letter-spacing:1px;font-size:9px}.recipe-info p{font-weight:400;color:#60685c}.match{font-size:10px;color:#637357}.match.ready{color:#3e653c}.meter{height:4px}.meter i{background:#819b6c}.view{font-weight:600;font-size:11px;min-height:42px}.heart{width:36px;height:36px;color:#716d60}.heart.saved{color:#af2823}.load-more{text-align:center;margin-top:24px}.load-more button{padding:10px 30px}.modal{padding:24px;max-height:90dvh}.modal h2,.modal h3{font-family:Fraunces,serif;font-weight:normal}.modal p,.modal ol{font-weight:400;color:#596250}.modal-back.open{overflow:auto}.modal-back.open~.toast{display:none}.checklist-note{font-size:11px!important;margin:0 0 12px!important}.shopping-button{margin-top:16px;font-size:11px}.ingredient-tag{font-size:11px;font-weight:600}.modal ol{font-size:14px}.modal ol li{padding-left:5px;margin-bottom:9px}.close{flex-shrink:0;min-width:40px;min-height:40px}.foot{font-weight:400;font-size:12px;margin-top:32px;color:#5f6859}
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#2e3c2c;color:#fff;padding:12px 18px;z-index:30;max-width:calc(100% - 28px);width:max-content;font-size:12px;box-shadow:0 3px 14px #0002}.toast[hidden]{display:none}.toast button{margin-left:16px;background:transparent;border:0;color:#fff;text-decoration:underline;padding:4px;font-weight:700}.skip-link{position:fixed;top:-80px;left:16px;z-index:40;background:white;padding:12px;color:#293e26}.skip-link:focus{top:10px}[hidden]{display:none!important}
+@media(min-width:931px){.game-layout>.panel:first-child{align-self:stretch}.basket-grid{flex:1;max-height:710px}}
+@media(max-width:930px) and (min-width:760px){.game-layout{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}.app{padding-inline:16px}.basket-grid{grid-template-columns:repeat(3,minmax(0,1fr));height:600px;max-height:700px;flex:1;padding-inline:12px}.panel-title{padding-inline:12px}.panel-title h2{font-size:22px}.ingredient-cart-icon{width:30px;margin-right:2px}.tiny{padding:6px}.fridge-zone{padding-inline:5px}.fridge{padding-inline:6px}.fridge-door{flex-basis:72px;width:72px;padding-inline:3px}.zone-name{font-size:8px}.recipe-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:759px){.app{padding:18px 12px 32px}.header-nav{gap:12px;font-size:10px}.header-nav a:first-child{display:none}.logo{font-size:22px}.hero{margin:25px auto}.hero h1{letter-spacing:-1.5px}.hero p{font-size:13px}.game-layout{grid-template-columns:1fr;gap:22px}.basket-grid{height:340px;max-height:340px;grid-template-columns:repeat(4,minmax(0,1fr))}.recipe-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.recipe-section{padding:22px 14px}.recipe-head{align-items:start}.recipe-head h2{font-size:27px}.recipe-head .tiny{white-space:nowrap;padding:6px}.recipe-tools input{flex-basis:100%}.recipe-tools select{flex:1}.fridge-stage{max-width:470px}.recipe-info{padding:12px}.recipe-info h3{font-size:19px}.recipe-image>span,.recipe-illustration{width:135px;height:105px}.recipe-image{height:130px}}
+@media(max-width:420px){.basket-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.fridge-door{flex-basis:78px;width:78px}.fridge{padding-inline:7px}.recipe-head{display:block}.recipe-head .tiny{display:inline-block;margin-top:8px}.recipe-image>span,.recipe-illustration{width:118px;height:95px}.recipe-info h3{font-size:18px}.panel-title{padding-inline:14px}.ingredient-cart-icon{width:30px;height:32px}.panel-title h2{font-size:25px}.recipe-grid{gap:10px}.recipe-info small{font-size:8px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+
+
+/* A playful pantry backdrop, entirely embedded for offline use. */
+body{
+ background-color:#fff7e9;
+ background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20600%20460%22%3E%3Cg%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%222%22%20opacity%3D%22.22%22%3E%3Cg%20stroke%3D%22%238a9a6a%22%3E%3Cpath%20d%3D%22M42%2060%20q16%20-25%2025%20-8%20q-3%2019%20-25%208%20m0%200%20l20%20-10%20M521%20314%20q16%20-25%2025%20-8%20q-3%2019%20-25%208%20m0%200%20l20%20-10%22%2F%3E%3Cpath%20d%3D%22M306%20128%20v12%20m-6%20-6%20h12%20M157%20361%20v10%20m-5%20-5%20h10%22%2F%3E%3C%2Fg%3E%3Cg%20stroke%3D%22%23c47a5d%22%3E%3Cpath%20d%3D%22M557%2080%20q-12%20-17%20-24%200%20q-8%2023%2013%2026%20q22%20-3%2011%20-26%20Z%20M546%2081%20l-7%20-10%20m7%2010%20l7%20-12%22%2F%3E%3Cpath%20d%3D%22M356%20392%20q-17%20-13%20-26%202%20q-9%2021%2015%2027%20q21%20-1%2011%20-29%20Z%20M343%20392%20l3%20-10%22%2F%3E%3C%2Fg%3E%3Cg%20stroke%3D%22%23b3a06c%22%3E%3Cpath%20d%3D%22M86%20235%20l5%208%20l-5%208%20l-5%20-8%20Z%20M424%2047%20l4%206%20l-4%206%20l-4%20-6%20Z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"),
+ repeating-linear-gradient(0deg,transparent 0 26px,rgba(198,112,78,.055) 26px 52px),
+ repeating-linear-gradient(90deg,transparent 0 26px,rgba(198,112,78,.055) 26px 52px);
+ background-size:600px 460px,52px 52px,52px 52px;
+}
+.top{background:#fffaf0e8;padding:12px 16px 17px;border-bottom-color:#aa9c7f}
+.hero{position:relative;isolation:isolate;padding:20px 130px 24px;margin-top:20px;margin-bottom:22px}
+.hero::before,.hero::after{content:"";position:absolute;top:50%;width:145px;height:135px;transform:translateY(-50%) rotate(-10deg);background-repeat:no-repeat;background-position:center;background-size:contain;pointer-events:none;z-index:-1}
+.hero::before{left:12px;}
+.hero::after{right:15px;transform:translateY(-50%) rotate(12deg);}
+.hero .eyebrow{display:inline-block;background:#f1eacb;padding:5px 12px;transform:rotate(-2deg);border:1px solid #c6ba8c;color:#647348}
+.hero h1{color:#3d3c2b}
+.foot{display:table;margin:32px auto 0;padding:8px 18px;background:#fffaf0e8;border-bottom:1px dashed #b4a589}
+@media(max-width:900px){.hero{padding-inline:40px}.hero::before,.hero::after{width:80px;height:80px;top:16px;opacity:.8}.hero::before{left:-8px}.hero::after{right:-8px}}
+@media(max-width:600px){body{background-size:440px 337px,40px 40px,40px 40px}.top{padding:10px 8px 14px}.hero{padding:35px 6px 15px;margin-top:18px}.hero::before,.hero::after{width:63px;height:60px;top:18px;opacity:.9}.hero::before{left:0}.hero::after{right:0}.hero .eyebrow{font-size:9px;letter-spacing:2px}.hero h1{margin-top:19px}.foot{font-size:11px}}
+
+
+/* Closed red brand fridge, detailed plated dishes, and deliberate recipe search. */
+.logo-fridge{width:39px;height:53px;mix-blend-mode:normal;flex-shrink:0;overflow:visible}
+.recipe-action{display:flex;justify-content:space-between;align-items:center;gap:30px;margin:28px 0 0;padding:27px 30px;background:#f1edcf;border:1px solid #a8ac86;border-left:5px solid #b72c25}
+.step-label{font-size:9px;letter-spacing:2px;font-weight:700;color:#68724b}
+.recipe-action h2{font:normal 28px/1.2 Fraunces,serif;color:#3f452e;margin:7px 0 8px;letter-spacing:-.5px}
+.recipe-action p{font-size:12px;color:#596345;margin:0;max-width:650px;line-height:1.6}
+.find-recipes{display:flex;justify-content:space-between;align-items:center;gap:32px;flex-shrink:0;background:#b72c25;color:#fff9eb;border:1px solid #7d2922;padding:17px 22px;min-height:55px;font-weight:600;font-size:14px;transition:background .15s,transform .15s;box-shadow:3px 3px 0 #dac29e}
+.find-recipes:hover:not(:disabled){background:#94241f;transform:translateY(-1px)}
+.find-recipes:disabled{background:#d9d6bd;color:#72765e;border-color:#bfc3a4;box-shadow:none;cursor:default}
+.find-recipes span{font-size:23px;line-height:1}
+.recipe-image{height:190px;overflow:hidden;background:radial-gradient(ellipse at center,#fffdf5 15%,#f2efdf 100%)!important}
+.recipe-image>span{width:100%;height:100%;padding:3px 3px 0}
+.recipe-image .detailed-dish{width:100%;height:100%;max-width:310px;object-fit:contain}
+.modal-art{background:radial-gradient(ellipse at center,#fffdf5,#f0eddf)!important;min-height:235px;padding:8px}
+.modal-art .detailed-dish{width:min(100%,400px);height:auto;max-height:290px}
+#recipesTitle:focus{outline:none}
+@media(max-width:930px){.recipe-image{height:175px}.recipe-action{padding:23px;gap:18px}.find-recipes{gap:20px}}
+@media(max-width:600px){.recipe-action{align-items:stretch;flex-direction:column;padding:22px 19px;gap:20px}.recipe-action h2{font-size:26px}.find-recipes{width:100%;justify-content:center;gap:24px}.recipe-image{height:150px}.modal-art{min-height:190px}}
+@media(max-width:390px){.recipe-image{height:130px}}
+
+
+/* Fresh mint and white kitchen palette. Food keeps its natural colors. */
+:root{--paper:#ffffff;--shade:#edf7f2;--muted:#536c60;--ink:#273e32}
+body{background-color:#e6f4ef;background-image:repeating-linear-gradient(0deg,transparent 0 26px,rgba(88,155,132,.075) 26px 52px),repeating-linear-gradient(90deg,transparent 0 26px,rgba(88,155,132,.075) 26px 52px);background-size:52px 52px}
+.top{background:#f8fffcf0;border-bottom-color:#8fb9a6}.logo span{color:#283d33}.header-nav a{color:#365e4c}
+.hero h1{color:#294738}.hero p{color:#466853}.hero .eyebrow{background:#d1ece0;border-color:#91bfa8;color:#355b48}
+.panel,.recipe-section{background:#fff;border-color:#668673}.explain{color:#526d5b}.search,.recipe-tools input{background:#fff;border-color:#aac8b7}.cat{background:#fff;color:#4c6a57;border-color:#b8cfc0}.cat.active{background:#365e49;border-color:#365e49;color:white}
+.food-option{background:#fff;border-color:#c3d8ca}.food-option:hover{background:#f1f9f4}.food-option.picked{background:#e1f2e7;border-color:#548268}.food-option .check{background:#edf7f0;border-color:#b3ccb9;color:#3b624c}.food-option.picked .check{background:#548268;color:#fff}
+.food-illustration{filter:drop-shadow(0 1px 1px #344d3612)}.ingredient-cart-icon{width:40px;height:38px;mix-blend-mode:normal}.tiny,.score-pill{background:#edf8f1;color:#42674f;border-color:#bdd8c6}
+.basket-footer{background:#e7f3eb;border-top-color:#c1d9c9}.reset{background:#fff;color:#395f48;border-color:#9abda5}.fridge-zone{background:#f8fffb}.shelf-controls select{background:#fff;border-color:#a7c5b3;color:#395b46}.help{color:#526e5c}
+.freezer{background:#edf8f5;border-color:#9cbdb0}.shelf{background:#fff;border-color:#bdcfc0;border-bottom-color:#99b1a1;box-shadow:0 2px 0 #586e5e}.shelf:after{background:#e3efe5}.bin{background:#ecf5ec;border-color:#a4bca9;border-bottom-color:#8ea993}.door-pocket{background:#fff;border-color:#b6caba;border-bottom-color:#92aa9b}.zone-name{color:#59725e}.zone-empty{color:#94ac99}.placed{background:#fff;border-color:#b7cdbb}.placed .name{color:#425b48}.tray{background:#edf7f0;border-color:#afcdb9}.tray-title{color:#496d55}
+.recipe-action{background:#cdebdc;border-color:#8cb79d;border-left-color:#b72c25}.step-label{color:#46674e}.recipe-action h2{color:#2f573e}.recipe-action p{color:#41654c}.find-recipes:disabled{background:#d9e7dd;border-color:#a9c7b2;color:#6c8773}.find-recipes{box-shadow:3px 3px 0 #97bba3}
+.recipe-head h2{color:#2d4835}.recipe-head p,.recipe-info p{color:#56705c}.recipe-card{background:#fff;border-color:#b1cbb8}.recipe-image{background:radial-gradient(ellipse at center,#fff 10%,#e9f4ee 100%)!important;border-bottom-color:#d2e4d8}.recipe-info h3{color:#2d4936}.heart{background:#fff;border-color:#c5d9ca}.filter{background:#fff;border-color:#b6cdbd;color:#46624e}.filter.active{background:#365e49;border-color:#365e49;color:white}.recipe-tools select{background:#fff;border-color:#abc7b3}.view{background:#365e49}.view:hover{background:#497a5d}.meter{background:#e6f0e8}.meter i{background:#72a183}
+.modal{background:#fff;border-color:#6f947b}.modal-art{background:radial-gradient(ellipse at center,#fff,#e9f4ee)!important}.modal h2,.modal h3{color:#304f39}.modal p,.modal ol{color:#536d59}.close{background:#e5f3e9;color:#3b6148}.ingredient-tag{background:#e3f2e7;color:#3a6447}.ingredient-tag.missing{background:#fce9e5;color:#9c5347}.foot{background:#f8fffcf0;border-color:#98bca4;color:#446c51}.drop-target.over{background:#e3f6eb!important;outline-color:#5c9871}
+@media(max-width:600px){body{background-size:40px 40px}}
+
+
+/* Hero illustrations use the same dimensional ingredient artwork. */
+.hero::before{}
+.hero::after{}
+
+/* Kitchen utensils replace the decorative fruit icons above the workspace. */
+.hero::before{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20140%20140%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22wood%22%20x2%3D%221%22%20y2%3D%22.3%22%3E%3Cstop%20stop-color%3D%22%23ac784a%22%2F%3E%3Cstop%20offset%3D%22.45%22%20stop-color%3D%22%23deb887%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23b48350%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cellipse%20cx%3D%2274%22%20cy%3D%22128%22%20rx%3D%2226%22%20ry%3D%224%22%20fill%3D%22%23416b50%22%20opacity%3D%22.10%22%2F%3E%3Cg%20transform%3D%22rotate%28-25%2070%2070%29%22%20stroke%3D%22%236c563c%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M64%2057%20Q39%2053%2044%2030%20Q47%2010%2070%2010%20Q93%2010%2096%2030%20Q100%2053%2076%2057%20L78%20121%20Q78%20130%2070%20130%20Q62%20130%2062%20121%20Z%22%20fill%3D%22url%28%23wood%29%22%2F%3E%3Cellipse%20cx%3D%2270%22%20cy%3D%2232%22%20rx%3D%2217%22%20ry%3D%2215%22%20fill%3D%22%23b38757%22%20stroke%3D%22%23ad7d4b%22%2F%3E%3Cpath%20d%3D%22M59%2024%20Q70%2015%2082%2027%20M68%2063%20L69%20112%22%20stroke%3D%22%23efd4ac%22%20fill%3D%22none%22%2F%3E%3Ccircle%20cx%3D%2270%22%20cy%3D%22120%22%20r%3D%222%22%20fill%3D%22%2387704d%22%20stroke%3D%22none%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E")}
+.hero::after{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20140%20140%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22steel%22%20x2%3D%221%22%20y2%3D%220%22%3E%3Cstop%20stop-color%3D%22%237c948a%22%2F%3E%3Cstop%20offset%3D%22.45%22%20stop-color%3D%22%23f5fcf8%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%238ca69a%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22red%22%20x2%3D%221%22%20y2%3D%220%22%3E%3Cstop%20stop-color%3D%22%23a52925%22%2F%3E%3Cstop%20offset%3D%22.45%22%20stop-color%3D%22%23df5c4c%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23a82f29%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cellipse%20cx%3D%2272%22%20cy%3D%22128%22%20rx%3D%2226%22%20ry%3D%224%22%20fill%3D%22%23416b50%22%20opacity%3D%22.10%22%2F%3E%3Cg%20transform%3D%22rotate%2824%2070%2070%29%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23788e83%22%20stroke-width%3D%222.3%22%3E%3Cpath%20d%3D%22M65%2076%20Q31%2047%2046%2024%20Q62%200%2078%2015%20Q111%2033%2075%2076%22%2F%3E%3Cpath%20d%3D%22M66%2075%20Q46%2040%2062%2017%20Q77%200%2084%2027%20Q95%2048%2073%2076%22%2F%3E%3Cpath%20d%3D%22M69%2075%20Q56%2039%2069%2013%20Q83%2037%2071%2075%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M65%2073%20H76%20L78%2082%20H63%20Z%22%20fill%3D%22url%28%23steel%29%22%20stroke%3D%22%23566d60%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M63%2081%20H78%20L77%20120%20Q71%20132%2064%20120%20Z%22%20fill%3D%22url%28%23red%29%22%20stroke%3D%22%23743a30%22%20stroke-width%3D%221.6%22%2F%3E%3Cpath%20d%3D%22M67%2087%20V113%22%20stroke%3D%22%23ee9b88%22%20stroke-width%3D%221.8%22%2F%3E%3Ccircle%20cx%3D%2270%22%20cy%3D%22121%22%20r%3D%222%22%20fill%3D%22%23e2ede5%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E")}
+
+/* Red hero label matching the retro fridge. */
+.hero .eyebrow{background:#b72c25;border-color:#8e241f;color:#fff;box-shadow:2px 2px 0 #89271f20}
+
+/* Rich cookbook dishes: generous framing in cards and recipe details. */
+.recipe-image{height:220px;background:#f5faf7!important}.recipe-image>span{padding:4px 0 0}.recipe-image .cookbook-dish{width:100%;height:100%;max-width:350px;filter:drop-shadow(0 2px 1px #3b503309)}.modal-art .cookbook-dish{width:min(100%,480px);height:auto;max-height:360px}.modal-art{min-height:260px;background:#f5faf7!important}@media(max-width:930px){.recipe-image{height:200px}}@media(max-width:600px){.recipe-image{height:170px}.modal-art{min-height:220px}}@media(max-width:390px){.recipe-image{height:145px}}
+
+/* Approved realistic painted cookbook pictures, shared by cards and recipe details. */
+.recipe-image{height:225px;background:#fff!important}.recipe-image>span{display:flex;width:100%;height:100%;padding:0;align-items:center;justify-content:center}.recipe-image .recipe-painted{display:block;width:100%;height:100%;max-width:none;max-height:none;object-fit:contain;filter:none}.modal-art{background:#fff!important;min-height:260px;padding:0}.modal-art .recipe-painted{display:block;width:min(100%,480px);height:auto;max-height:480px;object-fit:contain;margin:auto;filter:none}
+@media(max-width:930px){.recipe-image{height:210px}}@media(max-width:600px){.recipe-image{height:180px}.modal-art{min-height:220px}}@media(max-width:390px){.recipe-image{height:150px}}
+
+/* Soft painted ingredient artwork with clear selection states. */
+.food-option{min-height:132px}.food-option .food-emoji{width:80px;height:80px;flex:none;margin:auto}.ingredient-painted{display:block;width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;pointer-events:none}.food-option.picked .check{background:#b72c25;border-color:#b72c25;color:#fff}.placed .emoji{width:40px;height:40px}.door-pocket .placed .emoji{width:28px;height:28px}.placed .ingredient-painted{max-width:100%;max-height:100%}.placed{max-width:64px}.tray .placed{max-width:64px}
+@media(max-width:600px){.food-option{min-height:120px}.food-option .food-emoji{width:68px;height:68px}.placed .emoji{width:34px;height:34px}.door-pocket .placed .emoji{width:26px;height:26px}}
+/* The painted fridge remains a live ingredient workspace. */
+.fridge-zone{padding:20px 10px 21px;background:radial-gradient(ellipse at 50% 35%,#fffefa 0%,#f4fcf7 75%)}
+.fridge-heading h2{color:#2d4d38}.fridge-heading p{font-weight:400;color:#67806c}
+.scoreboard{gap:0;margin:9px 0 13px}.score-pill{border:0;background:none;box-shadow:none;padding:2px 11px;color:#58705c;font-size:11px}.score-pill+ .score-pill{border-left:1px solid #c8d9cb}.score-pill strong{font-size:14px;color:#b72c25}
+.personality-fridge{position:relative;display:block;container-type:inline-size;width:100%;max-width:600px;aspect-ratio:1201/1310;height:auto;min-height:0;padding:0;margin:7px auto 8px;isolation:isolate;overflow:visible;gap:0}
+.fridge-backdrop{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:fill;pointer-events:none;user-select:none;z-index:0}
+.personality-fridge .fridge,.personality-fridge .fridge-door{display:contents!important;position:static;min-height:0;min-width:0;width:auto;height:auto;padding:0;margin:0;border:0;background:none;box-shadow:none}
+.personality-fridge .fridge::before,.personality-fridge .fridge::after,.personality-fridge .door-handle{display:none!important;content:none}
+.personality-fridge .drop-target{position:absolute;z-index:2;min-height:0;padding:0;margin:0;border:0;border-radius:6px;box-shadow:none;background:transparent;transition:background .15s,outline-color .15s;outline:1px solid transparent}
+.personality-fridge [data-zone="freezer"]{left:21.3%;top:18%;width:43.5%;height:7.9%}
+.personality-fridge [data-zone="top"]{left:21.2%;top:27.3%;width:44.1%;height:8.8%}
+.personality-fridge [data-zone="middle"]{left:21.2%;top:38.2%;width:44.1%;height:11.0%}
+.personality-fridge [data-zone="bottom"]{left:21.2%;top:52.1%;width:44.1%;height:11.2%}
+.personality-fridge [data-zone="drawer"]{left:21.5%;top:76.2%;width:43.8%;height:7.8%}
+.personality-fridge [data-zone="door1"]{left:73.5%;top:17.8%;width:16.8%;height:13.4%}
+.personality-fridge [data-zone="door2"]{left:73.5%;top:35.2%;width:16.8%;height:14.4%}
+.personality-fridge [data-zone="door3"]{left:73.5%;top:59.2%;width:16.8%;height:18.7%}
+.personality-fridge .zone-name{position:absolute;top:0;left:2px;z-index:6;margin:0;padding:2px 4px;background:#fffffff0;border-radius:3px;color:#58715a;font-size:7px;font-size:clamp(6px,1.6cqw,9px);font-weight:500;letter-spacing:.2px;opacity:0;pointer-events:none;transition:opacity .15s}
+.personality-fridge .drop-target:hover .zone-name,.personality-fridge .drop-target:focus-within .zone-name,.personality-fridge .over .zone-name{opacity:1}
+.personality-fridge .drop-target.over{outline:2px dashed #69956d;outline-offset:1px;background:#dcf2df77!important}
+.personality-fridge .zone-items{display:flex;flex-wrap:nowrap;justify-content:flex-start;align-items:flex-end;gap:1%;width:100%;height:100%;min-height:0;padding:0 1px 2px;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;scrollbar-color:#8faa9860 transparent}
+.personality-fridge .zone-empty{display:none}
+.personality-fridge .placed{position:relative;display:flex;justify-content:center;align-items:flex-end;flex:0 0 auto;width:clamp(27px,9.4cqw,57px);min-width:0;max-width:none;height:auto;aspect-ratio:1;max-height:100%;margin:0;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;transition:transform .15s;touch-action:manipulation}
+.personality-fridge .placed:hover{transform:translateY(-3px) scale(1.05)}
+.personality-fridge .placed:focus-visible{outline:2px solid #b72c25;outline-offset:0;border-radius:3px}
+.personality-fridge .placed .emoji{display:block;width:100%;height:100%;max-width:100%;max-height:100%;margin:0;aspect-ratio:1}
+.personality-fridge .placed .ingredient-painted{display:block;width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+.personality-fridge .placed .name{display:none}
+.personality-fridge .door-pocket .placed{width:clamp(22px,8cqw,48px)}
+.fridge-paper{position:absolute;left:4.9%;top:35.1%;width:11.8%;height:13.5%;z-index:4;padding:.6% 0 0;transform:rotate(-5deg);pointer-events:none;color:#335a3c;font-family:"Fraunces",serif;font-size:7px;font-size:clamp(5px,1.8cqw,11px);line-height:1.4;text-align:left;overflow:hidden}
+.fridge-paper strong{display:block;font-size:clamp(6px,2cqw,12px);font-weight:600;margin-bottom:.3em}.fridge-paper ul{list-style:none;margin:0;padding:0}.fridge-paper li{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.fridge-paper .note-extra{opacity:.75;font-size:.9em}
+.fridge-empty-note{position:absolute;left:33.2%;top:53.6%;width:22%;height:10%;z-index:4;display:flex;align-items:center;justify-content:center;padding:1.3%;background:#fff3c8;box-shadow:2px 4px 6px #70583020;transform:rotate(-7deg);pointer-events:none;color:#416b48;text-align:center;font-family:"Fraunces",serif;font-size:clamp(8px,2.5cqw,15px);line-height:1.1}
+.fridge-empty-note::before{content:"";position:absolute;top:-6%;left:34%;width:29%;height:17%;background:#b5ccb5bf;transform:rotate(3deg)}
+.fridge-zone>.help{margin:8px 0 15px;font-size:11px;color:#657c68}
+@media(max-width:930px) and (min-width:760px){.fridge-zone{padding-inline:4px}.score-pill{padding-inline:6px;font-size:9px}.score-pill strong{font-size:12px}}
+@media(max-width:600px){.fridge-zone{padding-inline:6px}.personality-fridge{max-width:540px}.fridge-empty-note{box-shadow:1px 2px 4px #7058301a}.score-pill{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.personality-fridge *{transition:none!important}}
+
+
+.personality-fridge .door-pocket::after{content:"";position:absolute;z-index:3;left:-3%;right:-3%;bottom:0;height:18%;pointer-events:none;background:linear-gradient(100deg,#f9fff866,#deebe638 55%,#fffffc66);border-bottom:1px solid #bccfc077;border-radius:0 0 5px 5px}
+.personality-fridge .bin::after{content:"";position:absolute;z-index:3;left:0;right:0;bottom:0;height:72%;pointer-events:none;background:linear-gradient(180deg,#f1f7e90a,#e3ecde30);border-radius:0 0 7px 7px}
+
+.personality-fridge .ingredient-painted{transform:translateY(9%) scale(1.08);transform-origin:bottom center}
+
+/* Blend the complete shelf layer with the painted interior. The positioned
+   shelf is its own stacking group, so blending each image alone cannot reach
+   the fridge backdrop and leaves its white canvas visible. */
+.personality-fridge .drop-target{mix-blend-mode:multiply}
+.personality-fridge .placed,.personality-fridge .placed .emoji{background:transparent!important}
+.personality-fridge .placed .ingredient-painted{mix-blend-mode:normal}
+
+
+.fridge-heading h2{font-size:40px;line-height:1.15;margin:4px 0 12px}@media(max-width:600px){.fridge-heading h2{font-size:34px}}
+
+.foot{color:#b72c25;border-bottom-color:#b72c25}
+
+.recipe-source{margin-top:20px!important;padding-top:12px;border-top:1px solid #dce8df;font-size:10px!important}.recipe-source a{color:#6a7c6c;text-decoration:underline;text-underline-offset:2px}
+
+.foot{background:#b72c25;color:#fff;border-bottom-color:#8e241f}
+
+.student-hint{padding:10px 12px;margin:0 0 12px;background:#e8f3eb;color:#45664d;font-size:11px;line-height:1.5;border-left:3px solid #b72c25}
+
+/* Animated matching kitchen utensils. */
+.hero::before{background-image:url("assets/site/a8431b3fb0d61233.webp");transform-origin:55% 82%;transform:translateY(-50%) rotate(0deg);animation:spatula-sway 4.6s ease-in-out infinite;}
+.hero::after{background-image:url("assets/site/38ab7da214115028.webp");transform-origin:50% 82%;animation:whisk-sway 5.2s ease-in-out -1.3s infinite;}
+@keyframes spatula-sway{0%,100%{transform:translateY(-50%) rotate(5deg)}50%{transform:translateY(calc(-50% - 5px)) rotate(15deg)}}
+@keyframes whisk-sway{0%,100%{transform:translateY(-50%) rotate(-5deg)}50%{transform:translateY(calc(-50% - 4px)) rotate(5deg)}}
+@media(prefers-reduced-motion:reduce){.hero::before,.hero::after{animation:none!important}}
+/* End animated kitchen utensils. */
+
+/* Embedded open-source typography; no connection required. */
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:400 800;font-display:swap;src:url(assets/fonts/48282a415ec22e31.woff2) format('woff2')}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:400 800;font-display:swap;src:url(assets/fonts/8bd97e6bbbc1f602.woff2) format('woff2')}
+
+:root{--font-body:"Manrope",sans-serif;--font-display:"Fraunces",serif}
+body{font-family:var(--font-body);font-optical-sizing:auto}
+button,input,select,textarea{font-family:var(--font-body)}
+.logo,.hero h1,.panel-title h2,.fridge-heading h2,.recipe-head h2,.recipe-action h2,.recipe-info h3,.modal h2,.modal h3{font-family:var(--font-display);font-optical-sizing:auto}
+.logo{font-weight:650;letter-spacing:-1px}
+.hero h1{font-weight:650;letter-spacing:-1.8px;line-height:1.12}
+.hero p{font-size:14px;line-height:1.7;font-weight:450}
+.panel-title h2,.fridge-heading h2,.recipe-head h2,.recipe-action h2{font-weight:550}
+.recipe-info h3{font-weight:550;line-height:1.22;letter-spacing:-.35px;min-height:52px}
+.modal h2{font-weight:600;line-height:1.18;letter-spacing:-.5px}
+.modal h3{font-weight:600}
+.food-option .food-label{font-weight:650;line-height:1.3;letter-spacing:0}
+.cat,.filter,.reset,.view,.find-recipes{font-weight:700;letter-spacing:0}
+.recipe-info p,.modal p,.modal ol,.explain{line-height:1.65}
+.fridge-paper,.fridge-empty-note{font-family:var(--font-display);font-style:italic;font-weight:500}
+@media(max-width:600px){.logo{font-size:21px;letter-spacing:-.6px}.hero h1{letter-spacing:-1px}.hero p{font-size:13px}.recipe-info h3{min-height:48px}}
+
+/* Clearer cooking steps. */
+.modal ol li{margin:0 0 14px;padding-left:4px}.ingredient-tag{line-height:1.5;max-width:100%}
+
+/* Clean photographic cutouts. */
+.recipe-image,.modal-art{background:transparent!important}
+
+/* Comfortable phone and touch layouts. */
+.mobile-instruction,.mobile-dock{display:none}
+.modal-top{position:sticky;top:0;z-index:5;background:#fff;padding-bottom:12px}
+.modal-top>div{min-width:0;flex:1}.modal-top .close{position:relative;z-index:6}
+.touch-food-ghost{position:fixed;left:0;top:0;z-index:60;pointer-events:none;width:72px;height:72px;padding:0;border:0;background:transparent;display:grid;place-items:center;filter:drop-shadow(0 6px 8px #29463844)}
+.touch-food-ghost .emoji,.touch-food-ghost img{display:block;width:100%;height:100%;object-fit:contain;margin:0}
+.touch-food-ghost .name{display:none}
+.personality-fridge .placed.touch-drag-source{opacity:.3}
+@media(max-width:900px){
+ .game-layout{grid-template-columns:minmax(0,1fr);gap:24px}
+ .game-layout>.panel{width:100%;min-width:0}
+ .basket-grid{height:380px;max-height:46dvh;min-height:280px;flex:none;grid-template-columns:repeat(4,minmax(0,1fr))}
+ .personality-fridge{width:100%;max-width:650px;margin-inline:auto}
+}
+@media(pointer:coarse){
+ button,a,input,select,label{touch-action:manipulation}
+ .personality-fridge .placed{touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+ .personality-fridge .placed img{pointer-events:none;-webkit-user-drag:none}
+ .cat,.filter,.reset,.view,.find-recipes,.close,.heart,.header-nav a{min-height:44px}
+}
+@media(max-width:767px), (pointer:coarse) and (max-width:1000px) and (max-height:600px){
+ html{scroll-padding-top:16px;scroll-padding-bottom:100px}
+ .app{padding:12px max(12px,env(safe-area-inset-right)) calc(100px + env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left))}
+ .top{gap:10px;padding:10px 0 14px;align-items:center}
+ .logo{font-size:clamp(18px,5vw,22px);gap:8px;min-width:0;line-height:1.15}
+ .logo-fridge{width:28px;height:42px;flex:none}
+ .header-nav{flex:none;gap:0;font-size:12px}
+ .header-nav a{display:flex;align-items:center;justify-content:center;min-height:44px;padding:8px 2px;max-width:92px}
+ .header-nav a:first-child{display:none}
+ .hero{padding:36px 4px 18px;margin-top:14px}
+ .hero p{font-size:14px;line-height:1.65}
+ .panel-title{padding:16px;gap:8px;flex-wrap:wrap}
+ .panel-title h2{font-size:clamp(22px,6.6vw,28px);min-width:0;gap:8px}
+ .ingredient-cart-icon{width:27px;height:31px;flex:none}
+ .tiny{font-size:10px;padding:7px 8px;white-space:nowrap}
+ .explain{font-size:14px;line-height:1.55;padding:0 16px 12px}
+ .desktop-instruction{display:none}.mobile-instruction{display:inline}
+ .search{margin-inline:16px;min-height:50px}
+ .search input,.recipe-tools input,.recipe-tools select{font-size:16px;min-height:48px}
+ .categories{flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;padding:4px 16px 12px;gap:8px;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+ .cat{flex:none;min-height:44px;font-size:12px;padding:10px 12px}
+ .ingredient-controls{padding:0 16px 10px;gap:12px;font-size:12px;flex-wrap:wrap}
+ .ingredient-controls label{display:flex;align-items:center;gap:9px;min-height:44px;padding:6px 0}
+ .ingredient-controls input[type=checkbox]{width:22px;height:22px;margin:0;accent-color:#b72c25}
+ .basket-grid{padding:0 12px 12px;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;height:380px;max-height:46dvh;min-height:280px;-webkit-overflow-scrolling:touch}
+ .food-option{min-width:0;min-height:124px;padding:8px 4px}
+ .food-option .food-emoji{width:70px;height:70px;max-width:100%}
+ .food-option .food-label{font-size:12px;line-height:1.3;overflow-wrap:break-word}
+ .basket-footer{padding:12px 16px;gap:8px;flex-wrap:wrap}
+ .basket-footer b{font-size:12px}
+ .reset,.view,.filter{min-height:46px;font-size:13px;padding:11px 13px}
+ .fridge-zone{padding:20px 6px}
+ .fridge-heading h2{font-size:clamp(32px,9vw,38px)}
+ .fridge-zone>.help{font-size:13px;line-height:1.5;padding-inline:10px}
+ .tray-title{font-size:11px}
+ .tray-items{gap:8px;flex-wrap:wrap}
+ .tray .placed{min-width:44px;min-height:44px}
+ .score-pill{font-size:12px;line-height:1.4;padding-inline:7px}
+ .score-pill strong{font-size:16px}
+ .recipe-action{display:flex;flex-direction:column;align-items:stretch;padding:22px 18px;gap:18px}
+ .recipe-action p{font-size:14px;line-height:1.6}
+ .find-recipes{width:100%;min-height:54px;font-size:16px;padding:14px 18px;gap:16px}
+ .recipe-tools{gap:8px}
+ .recipe-tools input,.recipe-tools select{width:100%;flex-basis:100%;min-width:0;padding:12px}
+ .filter{font-size:12px;flex-grow:1}
+ .recipe-head p,.recipe-summary,.student-hint{font-size:13px;line-height:1.6}
+ .recipe-head h2{font-size:30px}
+ .recipe-info small{font-size:11px;letter-spacing:.6px;line-height:1.6}
+ .recipe-info p{font-size:14px;line-height:1.6}
+ .match{font-size:13px}
+ .heart{width:44px;height:44px;min-height:44px;font-size:25px;right:10px;top:10px}
+ .view{font-size:15px;min-height:48px}
+ .mobile-dock{position:fixed;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));left:0;right:0;bottom:0;z-index:12;gap:0;padding:8px max(12px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left));border-top:1px solid #b8cfc0;background:#fbfefcee;backdrop-filter:blur(12px);box-shadow:0 -3px 16px #29463810}
+ .mobile-dock a{display:flex;align-items:center;justify-content:center;min-height:48px;padding:8px 4px;color:#315641;text-decoration:none;font-size:13px;font-weight:750;line-height:1.2;text-align:center;border-right:1px solid #dce9df}
+ .mobile-dock a:last-child{border-right:0}.mobile-dock a:active,.mobile-dock a:focus-visible{background:#e4f1e8;color:#a52b25}
+ body:has(#foodSearch:focus,#recipeSearch:focus) .mobile-dock{display:none}
+ .modal-back{padding:0;align-items:stretch}
+ .modal{width:100%;height:100dvh;max-height:100dvh;max-width:none;border:0;box-shadow:none;padding:0 20px calc(28px + env(safe-area-inset-bottom));overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+ .modal-top{position:sticky;top:0;z-index:5;background:#fff;padding:calc(16px + env(safe-area-inset-top)) 0 14px;margin-bottom:14px;align-items:flex-start;gap:12px;border-bottom:1px solid #e0ece4}
+ .modal-top>div{min-width:0;flex:1}
+ .modal h2{font-size:27px;line-height:1.17}
+ .modal h3{font-size:23px;margin-top:24px}
+ .modal p{font-size:14px;line-height:1.6}
+ #modalMeta{font-size:12px;line-height:1.6;margin-top:8px}
+ .close{width:44px;height:44px;min-width:44px;min-height:44px;flex:none}
+ .modal-art{min-height:180px;margin:8px 0 20px}
+ .modal-art .recipe-painted{width:100%;height:260px;max-height:260px;object-fit:contain}
+ .ingredient-tag{font-size:13px;line-height:1.6;padding:9px 10px}
+ .modal ol{font-size:16px;line-height:1.75;padding-left:24px}
+ .modal ol li{margin-bottom:18px;padding-left:4px}
+ .recipe-source a{overflow-wrap:anywhere}
+ .shopping-button{font-size:14px;min-height:48px;width:100%;white-space:normal}
+ .toast{bottom:calc(82px + env(safe-area-inset-bottom));font-size:14px;line-height:1.5;max-width:calc(100% - 24px);padding:12px 16px}
+ .toast button{min-height:44px;font-size:14px}
+ .foot{font-size:13px;line-height:1.6;padding:16px}
+}
+@media(max-width:599px){.recipe-grid{grid-template-columns:minmax(0,1fr);gap:18px}.recipe-image{height:240px}.recipe-info h3{font-size:25px;line-height:1.2;min-height:0}.recipe-info{padding:17px}.recipe-info p{margin-bottom:14px}}
+@media(max-width:359px){.logo{font-size:17px;letter-spacing:-.6px}.logo-fridge{width:25px;height:38px}.header-nav{font-size:11px}.header-nav a{max-width:78px}.hero h1{font-size:36px}.recipe-image{height:215px}.modal{padding-inline:16px}.modal h2{font-size:24px}}
+
